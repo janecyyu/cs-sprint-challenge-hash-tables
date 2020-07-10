@@ -17,6 +17,7 @@ def reconstruct_trip(tickets, length):
     for t in tickets:
         if t.source not in dict:
             dict[t.source] = t.destination
+            # find the first destination, add it to route
             if t.source == "NONE":
                 route.append(t.destination)
 
