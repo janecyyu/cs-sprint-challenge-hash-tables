@@ -3,6 +3,15 @@ def has_negatives(a):
     YOUR CODE HERE
     """
     # Your code here
+    dict = {}
+    result = []
+
+    for e in a:
+        # absolute value e
+        if abs(e) not in dict:
+            dict[abs(e)] = 0
+        else:
+            result.append(abs(e))
 
     return result
 
