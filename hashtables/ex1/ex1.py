@@ -6,6 +6,7 @@ def get_indices_of_item_weights(weights, length, limit):
     dict = {}
     result = ()
     # loop each weight
+    print(sorted(weights))
     for w in sorted(weights):
         # add to dict
         if w not in dict:
@@ -20,11 +21,11 @@ def get_indices_of_item_weights(weights, length, limit):
                 return result
             # find their index in weights
             else:
-                result = (weights.index(limit-dict[w]), weights.index(dict[w]))
+                idx_l = min(weights.index(
+                    limit-dict[w]), weights.index(dict[w]))
+                idx_h = max(weights.index(
+                    limit-dict[w]), weights.index(dict[w]))
+                result = (idx_h, idx_l)
                 return result
     # if no match
     return None
-
-
-t = get_indices_of_item_weights([4, 4], 2, 8)
-print(t)
